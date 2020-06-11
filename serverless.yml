@@ -1,0 +1,14 @@
+service: serverless
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  region: ap-south-1
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - http:
+          path: users/create
+          method: get
